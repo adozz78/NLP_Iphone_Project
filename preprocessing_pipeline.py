@@ -203,19 +203,18 @@ def chat_words_conversion(text: str) -> str:
 
     return converted_text
 
-#load the  dataset
-df = pd.read_csv('data/APPLE_iPhone_SE.csv')
+def preprocess_text(text):
+    # Apply the preprocessing functions in a specific order
+    text = remove_debris(text)
+    text = remove_punctuation(text)
+    text = correct_spellings(text)
+    text = remove_stopwords(text)
+    text = remove_emoji(text)
+    text = lemmatize_words(text)
+    text = chat_words_conversion(text)
+    
+    return text
 
-# Apply all preprocessing functions 
-df['Reviews_processed'] = df['Reviews'].apply(remove_debris)
-df['Reviews_processed'] = df['Reviews_processed'].apply(remove_punctuation)
-df['Reviews_processed'] = df['Reviews_processed'].apply(correct_spellings)
-df['Reviews_processed'] = df['Reviews_processed'].apply(remove_stopwords)
-df['Reviews_processed'] = df['Reviews_processed'].apply(remove_emoji)
-df['Reviews_processed'] = df['Reviews_processed'].apply(lemmatize_words)
-
-# Save the processed data 
-df.to_csv('data/APPLE_iPhone_SE_processed.csv', index=False)
 
 
 
