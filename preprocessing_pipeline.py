@@ -25,6 +25,10 @@ def remove_debris(text):
         return text[:-9]  
     else:
         return text
+    
+def lower_casing(text):
+    
+    return text.lower()
 
 # remove puncuation
 PUNCT_TO_REMOVE = string.punctuation
@@ -206,6 +210,7 @@ def chat_words_conversion(text: str) -> str:
 def preprocess_text(text):
     # Apply the preprocessing functions in a specific order
     text = remove_debris(text)
+    text = lower_casing(text)
     text = remove_punctuation(text)
     text = correct_spellings(text)
     text = remove_stopwords(text)
