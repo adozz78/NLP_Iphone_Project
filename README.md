@@ -13,7 +13,9 @@ Welcome to the NLP Classification Project! This project focuses on analyzing and
 
 3. **Model Improvement:** Improve the baseline models by using various techniques
 
-4. **Comparison and Conclusion:** Compare the models' performances and draw conclusions 
+4. **Sequential Model (deep learning):** Implement and train a sequential model
+
+5. **Comparison and Conclusion:** Compare the models' performances and draw conclusions 
 
 ## Dataset
 
@@ -29,21 +31,26 @@ The project is organized into the following notebooks and scripts:
 
 3. **3_baseline_model_improve.ipynb:** Improvement of the baseline models through advanced techniques and hyperparameter tuning.
 
+3. **4_deep_learning_model.ipynb:** Implementation of a simple RNN sequential model.
+
 4. **preprocessing_pipeline.py:** A Python script for data preprocessing.
+   
 
 ## Model Performances
 
 The table below displays the performance metrics of different models implemented in this project:
 
-| Model Name                  | Precision | Recall | F1-Score | Support |
-|-----------------------------|-----------|--------|----------|---------|
-| Gradient Boosting (Baseline)|           |        |          |         |
-| Logistic Regression (Baseline)|          |        |          |         |
-| Multinomial Naive Bayes (Baseline)|     |        |          |         |
-| Gradient Boosting (Oversampling)|         |        |          |         |
-| Gradient Boosting (Undersampling)|        |        |          |         |
-| Gradient Boosting (Mixed Resampling)|   |        |          |         |
-| Support Vector Machine|                    |        |          |         |
+| Model Name                  | Accuracy |
+|-----------------------------|-----------|
+| Gradient Boosting (Baseline)|       71%    |        
+| Logistic Regression (Baseline)|    72%      |       
+| Multinomial Naive Bayes (Baseline)|   70%  |        
+| Gradient Boosting (Class redistribution)|    90%    |       
+| Gradient Boosting (Class redistribution + Oversampling)|    81%    |  
+| Gradient Boosting (Class redistribution + Undersampling)|    64%    |  
+| Gradient Boosting (Class redistribution + Oversampling + tuning hyperparameters)|    85%    |        
+| Sequential Model (RNN model)|       60%             |     
+| Sequential Model (RNN model + Class redistribution + Oversampling)|       73%             |       
 
 ## Installation
 
@@ -69,6 +76,8 @@ To set up and run the project, follow these steps:
 
 2. [Scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)
 
-3. [ChatGPT by OpenAI](https://beta.openai.com/signup/)
+3. [Keras Documentation](https://keras.io/)
+
+
 
 
